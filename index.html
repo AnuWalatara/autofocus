@@ -5,19 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AutoFocus</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="/css/style.css"> -->
+
 </head>
-<body>
 
 <!-- this is how you write a comment describing your code in HTML. the body section is for all content that is visible. Keep it here! Semantic structure is just as important as syntax. -->
 <body>
-<h1>AutoFocus</h1>
-<h2>Homepage</h2>
-<h3>Subpages</h3>
-	<p>Hello world, this is the website of AutoFocus</p>
-<img src="images/VanG.jpg">
-<!-- random van gogh remixed image, feauring starry night -->
-<div><a href="about.html">About</a></div>
+<!-- navigation bar for buttons -->
+    <header class = "header-sticky">
+        <nav class = "main-nav">
+            <a href="discovery.html">Discovery</a>
+            <a href="ftp.html">For The People</a>
+            <a href="efficiency.html">Efficiency</a>
+            <a href="index.html">AutoFocus</a>
+            <a href="surveillance.html">Surveillance</a>
+            <a href="ai-beyond.html">AI/Beyond</a>
+            <a href="search.html">Search</a>
+        </nav>
+
+<!-- adding the breadcrumbs -->
+        <div class = "breadcrumb">
+            Homepage
+            <!-- <a href="index.html">Homepage</a> > Discovery -->
+        </div>
+    </header>
+
+<div class="container">
+
+    <h1>AutoFocus</h1>
+    <h2>Home</h2>
+    <!-- <h3>Subpages</h3> -->
+    <p>Welcome to AutoFocus</p>
+    <!-- <img src="images/eye.jpg"> -->
+
+    <!-- adding "hero" function in order to get the homepage image to extend to the sides -->
+    <img class="hero-img" src="images/eye.jpg" alt="Eye with lens">
+    <nav>
+        <a href="discovery.html">Discovery</a>
+    </nav>
+    <p>Lorem ipsum dolor sit amet. Ut illum illo ut dolores ratione nam ducimus blanditiis vel veniam aspernatur. Ut alias accusamus in nihil veritatis non vero perspiciatis et laborum quas qui tempore quod.</p>
+    <img class="hero-img" src="images/eye.jpg" alt="Eye with lens">
+    <nav>
+        <a href="discovery.html">Discovery</a>
+    </nav>
+    <p>Lorem ipsum dolor sit amet. Ut illum illo ut dolores ratione nam ducimus blanditiis vel veniam aspernatur. Ut alias accusamus in nihil veritatis non vero perspiciatis et laborum quas qui tempore quod.</p>
+
+    <img src="images/eye.jpg">
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>    
+    
+</div>
+<!-- <a href="#trouble">The trouble with HTML and CSS</a> -->
+
 
 </body>
 </html>
