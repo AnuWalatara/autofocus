@@ -1,0 +1,388 @@
+:root {
+    font-size: 16px; 
+}
+
+/* main canvas */
+body {
+    background-color: darkgrey;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+/* section for text & layout adjustments */
+.container {
+    margin: auto;
+    width: 80vw;
+    padding: 0.5rem;
+}
+
+h1,
+h2,
+h3{
+    font-size: 2rem;
+}
+
+p {
+    font-size: 0.875rem;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* sticky function for progressive page functions (think navigation bar when scrolling) */
+.sticky {
+    top: 0;
+    width: 100%;
+    position: sticky;
+    background-color: white;
+    filter: drop-shadow(2px 2px 20px red);
+}
+
+.left {
+    float: left;
+    margin: 5px;
+}
+
+.right {
+    float: right;
+}
+
+div.relative {
+    position: relative;
+    border: 1px solid white;
+}
+
+div.absolute {
+    position: absolute;
+    right: 0px;
+    height: 200px;
+    width: 200px;
+    border: 1px solid white;
+}
+
+div.absolute-2 {
+    position: absolute;
+    right: 80vw;
+    z-index: -1;
+}
+
+/* adding more effects to button */
+.backtotop {
+    position: fixed;
+    right: 0.5%;
+    bottom: 1%;
+    font-size: 2rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    filter: drop-shadow(2px 2px 20px white);
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* getting the image to display properly from either edge with full vw & spacing (hero func)*/
+.hero-img{
+    width: 100%; 
+    height: auto;
+    display: block;
+    margin: 0;
+    /* margin-left: calc(50%  50vw); */
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 3rem;
+    font-family: sans-serif;
+    letter-spacing: -0.1rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 0.875rem;
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 800px) {
+    img {
+        width: 49vw;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+}
+
+nav a {
+    text-decoration: none;
+    padding: 8px;
+    filter: drop-shadow(2px 2px 10px white);
+    font-family: sans-serif;
+    background-color: white;
+    border: 0;
+    line-height: 1.5em;
+    white-space: nowrap;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: red;
+    transition: 2s;
+}
+
+figcaption {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: slategrey;
+    text-transform: uppercase;
+}
+
+blockquote {
+    font-style: italic;
+    text-indent: -0.45em;
+    quotes: "“" "”" "‘" "’";
+}
+
+blockquote::before {
+    content: open-quote;
+}
+
+blockquote::after {
+    content: close-quote;
+}
+/* adding the button functionality to the page */
+
+button-2 {
+    padding: 20px;
+    margin: 20px;
+    filter: drop-shadow(2px 2px 10px white);
+    font-family: monospace;
+    text-transform: uppercase;
+    background-color: white;
+    border: 0;
+    display: inline-block;
+}
+
+button a {
+    text-decoration: none;
+}
+
+/* hover effects for the button */
+button a:hover {
+    filter: drop-shadow(3px 3px 20px white);
+}
+
+/* adding the navigation bar via sticky */
+.header-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: black;
+}
+
+/* navigation buttons */
+.main-nav{
+    padding: 0.5rem 1rem;
+}
+
+.main-nav a{
+    margin-right: 0.5rem;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+/* 
+.main-nav a {
+    flex: 1;
+    text-align: center;
+} */
+
+/* including the breadcrumb functionality below the navigation bar */
+.breadcrumb {
+    padding: 0.25rem 1rem 0.5rem;
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    color: white;
+}
+
+.breadcrumb a {
+    color: white;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: red;
+}
+
+/* adding restrictions/boundaries (aka breakpoints for diff devices) */
+
+/* section for max width of 1024px */
+@media screen and (max-width: 1024px) {
+    body {
+        font-size: 0.97rem;
+    }
+
+    .container {
+        width: 85vw;
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    p{
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+}
+
+/* section for max width of 768px */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    .container {
+        width: 90vw;
+        padding: 1.25rem
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+}
+
+/* section for max width of 600px */
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 0.93rem;
+    }
+
+    .container {
+        width: 95vw;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2.1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+}
+
+/* section for max width of 480px */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        width: 98vw;
+        padding: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.88rem;
+        line-height: 1.55;
+    }
+}
+
+/* section for max width of 320px */
+@media screen and (max-width: 320px) {
+    body{ 
+        font-size: 0.88rem;
+    }
+
+    .container {
+        width: 100vw;
+        padding: 0.75rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+}
+
+
+
