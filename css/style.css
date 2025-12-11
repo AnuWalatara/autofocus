@@ -568,7 +568,7 @@ button a:hover {
 
 /*basic timeline (https://www.w3schools.com/howto/howto_css_timeline.asp)*/ 
 .discovery-timeline {
-    margin-top: 1.5rem;
+    margin-top: 7.5rem;
 }
 
 .discovery-timeline-line {
@@ -640,4 +640,55 @@ button a:hover {
     .discovery-section {
         padding: 2rem 1.5rem;
     }
+}
+
+/* surveillance page (modified duplicate of discovery page from prior)*/
+.discovery-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.discovery-grid .discovery-text,
+.discovery-grid .discovery-image {
+  flex: 1;
+}
+
+.discovery-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.discovery-bottom-left,
+.discovery-bottom-right {
+  flex: 1;
+}
+
+@media (min-width: 800px) {
+  .discovery-grid,
+  .discovery-bottom {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.surveillance-hero {
+  width: 100vw;
+  height: 55vh;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* section for (for the people) */
+.ftp-hero {
+  width: 100%;
+  height: 55vh;
+  object-fit: cover;
+  object-position: 50% 35%;
 }
