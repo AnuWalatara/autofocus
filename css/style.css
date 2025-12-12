@@ -888,3 +888,54 @@ body.fade-out {
     opacity: 1 !important;
   }
 }
+
+/* re-organising the layout for a mobile viewing expereince (specifically vertical orientations) */
+@media (max-width: 900px) {
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    padding: 18px 12px;
+  }
+
+  /* change the search input for the vertical's smaller width */
+  .search-input {
+    width: 160px;       
+    max-width: 60vw;
+    flex: 0 0 auto;
+  }
+}
+
+/* stack the homepage sections (make it concise) */
+@media (max-width: 900px) {
+  .top-row,
+  .bottom-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .top-item,
+  .bottom-item {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  .top-img,
+  .bottom-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-button {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .search-input {
+    width: 140px;
+  }
+}
