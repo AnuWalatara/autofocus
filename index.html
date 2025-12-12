@@ -21,7 +21,14 @@
             <a href="index.html" class="logo">AutoFocus</a>
             <a href="surveillance.html">Surveillance</a>
             <a href="ai-beyond.html">AI/Beyond</a>
-            <a href="search.html">Search</a>
+            <!-- <a href="search.html">Search</a>-->
+            <!-- add search function (https://www.w3schools.com/howto/howto_js_filter_lists.asp) -->
+            <input
+                type="text"
+                id="navSearch"
+                placeholder="Search..."
+                onkeydown="handleSearch(event)"
+            />
         </nav>
 
 <!-- adding the breadcrumbs -->
@@ -88,9 +95,63 @@
 <!-- bottom page buttons -->
 <div class="page-nav">
     <a href="previous-page.html" class="page-prev">Previous</a>
-    <a href="index.html" class="page-home">Home</a>
+    <button onclick="topFunction()" class="page-home" id="toTopBtn"> <!-- adding a back to top function (https://www.w3schools.com/howto/howto_js_scroll_to_top.asp) -->
+    Top of Page
+    </button>
     <a href="next-page.html" class="page-next">Next</a>
 </div>
+
+<!-- search button functionality (https://www.w3schools.com/howto/howto_css_searchbar.asp) -->
+<script>
+function handleSearch(e) {
+  if (e.key === "Enter") {
+    const query = e.target.value.toLowerCase().trim();
+
+    const pages = { //list all possible common/related entries
+      "home": "index.html",
+      "autofocus": "index.html",
+      "discovery": "discovery.html",
+      "for the people": "ftp.html",
+      "people": "ftp.html",
+      "ftp": "ftp.html",
+      "efficiency": "efficiency.html",
+      "surveillance": "surveillance.html",
+      "ai": "ai-beyond.html",
+      "ai/beyond": "ai-beyond.html",
+      "beyond": "ai-beyond.html"
+    };
+
+    if (pages[query]) {
+      window.location.href = pages[query];
+    } else {
+      alert("Typo? Don't think this page exists :/ Please try again!");
+    }
+  }
+}
+</script>
+
+<!-- back to top button functionality (https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)-->
+ <script>
+  // button itself
+  const toTopBtn = document.getElementById("toTopBtn");
+
+  // make the button visible after scrolling down
+  window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      toTopBtn.style.display = "inline-block";
+    } else {
+      toTopBtn.style.display = "inline-block"; 
+    }
+  };
+
+  // going back to top
+  function topFunction() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
 
 </body>
 </html>
