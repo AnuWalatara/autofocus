@@ -19,7 +19,15 @@
             <a href="index.html" class="logo">AutoFocus</a>
             <a href="surveillance.html">Surveillance</a>
             <a href="ai-beyond.html">AI/Beyond</a>
-            <a href="search.html">Search</a>
+            <!-- <a href="search.html">Search</a> -->
+
+            <!-- add search function (https://www.w3schools.com/howto/howto_js_filter_lists.asp) -->
+            <input
+                type="text"
+                id="navSearch"
+                placeholder="Search..."
+                onkeydown="handleSearch(event)"
+            />
         </nav>
 
 <!-- adding the breadcrumbs -->
@@ -159,9 +167,90 @@
 <!-- bottom page buttons -->
 <div class="page-nav">
     <a href="ai-beyond.html" class="page-prev">Previous</a>
-    <a href="index.html" class="page-home">Home</a>
+    <!-- <a href="index.html" class="page-home">Home</a> -->
+    <button onclick="topFunction()" class="page-home" id="toTopBtn"> <!-- adding a back to top function (https://www.w3schools.com/howto/howto_js_scroll_to_top.asp) -->
+    Top of Page
+    </button>
     <a href="ftp.html" class="page-next">Next</a>
 </div>
 
+<!-- search button functionality (https://www.w3schools.com/howto/howto_css_searchbar.asp) -->
+<script>
+function handleSearch(e) {
+  if (e.key === "Enter") {
+    const query = e.target.value.toLowerCase().trim();
+
+    const pages = { //list all possible common/related entries
+      "home": "index.html",
+      "autofocus": "index.html",
+      "discovery": "discovery.html",
+      "for the people": "ftp.html",
+      "people": "ftp.html",
+      "ftp": "ftp.html",
+      "efficiency": "efficiency.html",
+      "surveillance": "surveillance.html",
+      "ai": "ai-beyond.html",
+      "ai/beyond": "ai-beyond.html",
+      "beyond": "ai-beyond.html"
+    };
+
+    if (pages[query]) {
+      window.location.href = pages[query];
+    } else {
+      alert("Typo? Don't think this page exists :/ Please try again!");
+    }
+  }
+}
+</script>
+
+<!-- back to top button functionality (https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)-->
+ <script>
+  // button itself
+  const toTopBtn = document.getElementById("toTopBtn");
+
+  // make the button visible after scrolling down
+  window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      toTopBtn.style.display = "inline-block";
+    } else {
+      toTopBtn.style.display = "inline-block"; 
+    }
+  };
+
+  // going back to top
+  function topFunction() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
+
 </body>
 </html>
+
+<!-- Images used (copyright free & free use)
+https://unsplash.com/photos/blurred-person-glows-at-night-in-city-lights-IBz6tZzp_C4
+https://pixabay.com/photos/camera-monitoring-minimal-1723546/
+https://www.pexels.com/photo/person-using-camera-1759530/
+https://pixabay.com/photos/old-camera-camera-photo-camera-old-2878616/
+https://pixabay.com/photos/camera-photography-kodak-6917211/
+https://pixabay.com/photos/camera-photograph-camera-in-a-camera-2430047/
+https://unsplash.com/photos/a-black-and-white-photo-of-a-womans-face-maJkZZPt31c
+https://unsplash.com/photos/surveillance-camera-scans-and-identifies-people-adYA8qjXkT4
+https://unsplash.com/photos/woman-in-gray-coat-standing-in-front-of-black-and-white-wall-OcVLsDcTPBc
+https://unsplash.com/photos/a-black-and-white-photo-of-a-bunch-of-hair-dryers-38-XlBv5b8k
+https://www.pexels.com/photo/black-dslr-camera-in-close-up-photography-9992338/
+https://www.pexels.com/photo/white-smartphone-in-close-up-photography-9992435/
+https://www.pexels.com/photo/people-holding-their-phones-3184435/
+https://www.pexels.com/photo/clear-mannequin-on-dark-blue-background-8386365/
+https://unsplash.com/photos/a-black-and-white-photo-of-a-mans-face-covered-in-torn-paper-xWGoK1tqxyo
+https://unsplash.com/photos/a-black-and-white-photo-of-a-human-head-q2vqrjT21p0
+
+Articles referenced:
+Newhall, Beaumont. The History of Photography: From 1839 to the Present. Museum of Modern Art, 1982.
+Sekula, Allan. “The Body and the Archive.” October, vol. 39, 1986, pp. 3–64.
+Sontag, Susan. On Photography. Farrar, Straus and Giroux, 1977.
+Goldberg, Vicki. The Power of Photography. Abbeville Press, 1991.
+Rieger, O. Yale. “The Evolution of Digital Imaging.” Journal of Imaging Science and Technology, 2000.
+Manovich, Lev. “Understanding Digital Photography.” In The Language of New Media. MIT Press, 2001. -->
